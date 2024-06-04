@@ -35,12 +35,12 @@ namespace RealState.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Listing listing)
         {
-            //if(!Model.IsValid)
-            //{
-            //    return BadRequest();
-            //}
-            
-          /// int newId=lstListings.Count>0 ? lstListings.Max(x => x.Id) : 1;
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            /// int newId=lstListings.Count>0 ? lstListings.Max(x => x.Id) : 1;
 
             lstListings.Add(listing);
 
